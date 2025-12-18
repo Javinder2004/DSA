@@ -1,7 +1,6 @@
 class Solution {
     public static String infixToPostfix(String s) {
-        // code here
-        Stack<String> val = new Stack<>();
+Stack<String> val = new Stack<>();
 Stack<Character> op = new Stack<>();
 for(int i=0;i<s.length();i++){
     char ch = s.charAt(i);
@@ -49,6 +48,7 @@ while(val.size()!=1){
     val.push(v1+v2+o);
 }
 String ans = val.peek();
-return ans;     
+return ans;
+        
     }
 }
