@@ -12,18 +12,16 @@ class Node {
 
 class Solution {
     Node reverseList(Node head) {
-        // code here
-        Node temp = head;
-        Node next = null;
         Node prev = null;
-        while(temp!=null){
-            prev = temp.next;
-            temp.next = next;
-            next = temp;
-            temp = prev;
-            
+        Node curr = head;
+        Node next = null;
+
+        while (curr != null) {
+            next = curr.next;   // store next
+            curr.next = prev;   // reverse link
+            prev = curr;        // move prev
+            curr = next;        // move curr
         }
-        return next;
-        
+        return prev; // new head
     }
 }
